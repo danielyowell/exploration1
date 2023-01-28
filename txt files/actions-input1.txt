@@ -1,0 +1,6 @@
+#Draw (actions of input1.txt)
+(4, X)
+(2, X)
+(8, X)
+(1, X)
+(3, X)

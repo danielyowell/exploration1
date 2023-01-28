@@ -1,0 +1,5 @@
+#O wins (actions of input3.txt)
+(0, X)
+(2, X)
+(6, X)
+(5, X)

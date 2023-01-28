@@ -1,0 +1,4 @@
+#X wins (actions of input2.txt)
+(4, X)
+(3, X)
+(5, X)
