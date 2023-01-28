@@ -15,3 +15,9 @@
 > The player has won:  
 > X  
 > times
+
+#### Status:
+
+- Program runs successfully with current input files
+- Missing detection for win/lose conditions
+- Missing algorithm for reinforcement learning (will presumably be written in `main.py`)
