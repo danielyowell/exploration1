@@ -7,14 +7,14 @@ input = open("txt-files\output\state-output.txt", "r")
 list2 = input.readlines()
 print(list2)
 
-board = [True for i in range(9)] 
+board = [False for i in range(9)] 
 print(board)
 
 idx = 0
 for moves in list2:
     # print(moves[4])
     if moves[4] == "_":
-        board[idx] = False
+        board[idx] = True
     idx += 1
 
 print(board)
@@ -22,5 +22,5 @@ print(board)
 output = open("txt-files\output\what-actions-output.txt", "w")
 for x in range(9):
     if(board[x]) :
-        output.write( "(" + str(x) + ", X)\n")
+        output.write( "(" + str(x) + ", O)\n")
 output.close()
