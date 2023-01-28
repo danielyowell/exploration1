@@ -5,14 +5,14 @@ import random
 
 state = open("txt-files\output\state-output.txt", "r")
 stateList = state.readlines()
-print(stateList)
+# print(stateList)
 
 # DY: would it not be more efficient to pick a random element from what-actions-output.txt?
 actionList = open("txt-files\output\what-actions-output.txt", "r")
 
 # pick action
 action = random.choice(actionList.readlines())
-print(action)
+# print(action)
 
 # extract data
 idx = action[1]
@@ -25,8 +25,8 @@ newPosition = "(" + str(idx) + ", " + char + ")"
 state2 = open("txt-files\output\state-output.txt", "r")
 content = state2.read()
 content = content.replace(oldPosition, newPosition)
-print("new content:")
-print(content)
+# print("new content:")
+# print(content)
 
 state.close()
 

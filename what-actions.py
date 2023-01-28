@@ -5,10 +5,11 @@
 
 input = open("txt-files\output\state-output.txt", "r")
 list2 = input.readlines()
-print(list2)
+# print(list2)
+input.close()
 
 board = [False for i in range(9)] 
-print(board)
+# print(board)
 
 idx = 0
 for moves in list2:
@@ -17,7 +18,7 @@ for moves in list2:
         board[idx] = True
     idx += 1
 
-print(board)
+# print(board)
 
 output = open("txt-files\output\what-actions-output.txt", "w")
 for x in range(9):
