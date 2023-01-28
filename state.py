@@ -4,14 +4,25 @@
 # OUTPUT: a file describing the state of the board with 9 pairs of values of the form (N,P) 
 #         where N is the position (0-8) and P is what is placed there (X or __ ) 
 
-file1 = open("txt-files\input\\actions-input1.txt", "r")
-file1.readline() # skip intro comment
-print(file1.readlines())
+input = open("txt-files\input\\actions-input1.txt", "r")
+input.readline() # skip intro comment
 
-file2 = open("txt-files\output\state-output.txt", "w")
-file2.write("hello world")
-file2.close()
+board = ["_" for i in range(9)] 
+print(board)
 
-file3 = open("txt-files\output\what-actions-output.txt", "w")
-file3.write("hello again")
-file3.close()
+list1 = input.readlines()
+print(list1)
+
+for moves in list1:
+    idx = moves[1]
+    print(idx)
+    char = moves[4]
+    print(char)
+    board[int(idx)] = char
+
+print(board)
+
+output = open("txt-files\output\state-output.txt", "w")
+for x in range(9):
+    output.write( "(" + str(x) + ", " + board[x] + ")\n")
+output.close()
