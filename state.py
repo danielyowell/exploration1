@@ -8,19 +8,15 @@ input = open("txt-files\input\\actions-input1.txt", "r")
 input.readline() # skip intro comment
 
 board = ["_" for i in range(9)] 
-print(board)
 
 list1 = input.readlines()
-print(list1)
 
 for moves in list1:
     idx = moves[1]
-    print(idx)
     char = moves[4]
-    print(char)
     board[int(idx)] = char
 
-print(board)
+# print(board)
 
 output = open("txt-files\output\state-output.txt", "w")
 for x in range(9):
