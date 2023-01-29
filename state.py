@@ -4,21 +4,27 @@
 # OUTPUT: a file describing the state of the board with 9 pairs of values of the form (N,P) 
 #         where N is the position (0-8) and P is what is placed there (X or __ ) 
 
-input = open("txt-files\input\\actions-input1.txt", "r")
-input.readline() # skip intro comment
+def main():
+    # local variables
+    board = ["_" for i in range(9)]
 
-board = ["_" for i in range(9)] 
+    # read input (file with list of actions played)
+    input = open("txt-files\input\\actions-input1.txt", "r")
+    input.readline() # skip intro comment
+    list1 = input.readlines()
 
-list1 = input.readlines()
+    # populate board with actions on given positions
+    for moves in list1:
+        idx = moves[1]
+        char = moves[4] # in tic-tac-alone, char will only be X
+        board[int(idx)] = char
 
-for moves in list1:
-    idx = moves[1]
-    char = moves[4]
-    board[int(idx)] = char
+    # write to output (file that describes state)
 
-# print(board)
+    output = open("txt-files\output\state-output.txt", "w")
+    for x in range(9):
+        output.write( "(" + str(x) + ", " + board[x] + ")\n")
+    output.close()
 
-output = open("txt-files\output\state-output.txt", "w")
-for x in range(9):
-    output.write( "(" + str(x) + ", " + board[x] + ")\n")
-output.close()
+if __name__ == '__main__':
+    main()
